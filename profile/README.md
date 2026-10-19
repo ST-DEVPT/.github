@@ -4,6 +4,7 @@
 
 <p align="center">
   <a href="https://github.com/ST-DEVPT/rack-fan-control"><img alt="Fan Control" src="https://img.shields.io/badge/Fan%20Control-quiet%20rack%20servers-e4501b?style=for-the-badge"></a>
+  <a href="https://github.com/ST-DEVPT/smoketrace"><img alt="smoketrace" src="https://img.shields.io/badge/smoketrace-the%20route%20behind%20every%20spike-2a78d6?style=for-the-badge"></a>
   <a href="https://github.com/ST-DEVPT/Jellyflix"><img alt="Jellyflix" src="https://img.shields.io/badge/Jellyflix-Jellyfin%20on%20Android%20TV-9457dc?style=for-the-badge"></a>
 </p>
 
@@ -42,6 +43,42 @@ docker run -d -p 8080:8080 -v "$PWD/data:/data" -e WEB_PASSWORD=pick-one ghcr.io
   <a href="https://github.com/ST-DEVPT/rack-fan-control/actions/workflows/docker.yml"><img alt="CI" src="https://github.com/ST-DEVPT/rack-fan-control/actions/workflows/docker.yml/badge.svg"></a>
   <img alt="amd64 and arm64" src="https://img.shields.io/badge/docker-amd64%20%7C%20arm64-2c6b8a">
   <img alt="Dell, Supermicro, HPE" src="https://img.shields.io/badge/Dell%20%C2%B7%20Supermicro%20%C2%B7%20HPE-supported-4f4d48">
+</p>
+
+<br>
+
+## 📡 smoketrace
+
+**SmokePing, with the route behind every spike.** Latency, jitter and loss for every target, and an mtr
+traceroute taken in the same minutes, so a latency step and the route change that caused it sit on one screen,
+and in your alerts.
+
+<p align="center">
+  <a href="https://github.com/ST-DEVPT/smoketrace"><img alt="smoketrace: a latency step, the loss under it and the route that changed" src="https://raw.githubusercontent.com/ST-DEVPT/smoketrace/main/docs/detail.jpg" width="100%"></a>
+</p>
+
+<table>
+  <tr>
+    <td width="33%" valign="top"><b>🧭 Reads mtr for you</b><br><sub>Which hops changed, which networks the path now crosses, where real loss starts, and which "loss" is only ICMP rate-limiting.</sub></td>
+    <td width="33%" valign="top"><b>🌍 Seen from everywhere</b><br><sub>Agents at other sites, pushed or pulled; down for everyone or only from one place, at a glance.</sub></td>
+    <td width="33%" valign="top"><b>🔔 Alerts that say why</b><br><sub>Discord, ntfy or a webhook, with the hop where loss starts and the AS path before and after.</sub></td>
+  </tr>
+  <tr>
+    <td valign="top"><b>🔁 Off SmokePing in one go</b><br><sub>Reads its config as it is (targets, probes, slaves) and imports its RRD history.</sub></td>
+    <td valign="top"><b>📈 Prometheus and Grafana</b><br><sub>Every target and site in /metrics, and a dashboard to import.</sub></td>
+    <td valign="top"><b>🪶 Nothing to babysit</b><br><sub>One Python file, no dependencies, a container with only NET_RAW, English and Portuguese.</sub></td>
+  </tr>
+</table>
+
+```bash
+curl -O https://raw.githubusercontent.com/ST-DEVPT/smoketrace/main/docker-compose.yml && docker compose up -d
+```
+
+<p>
+  <a href="https://github.com/ST-DEVPT/smoketrace/releases"><img alt="Release" src="https://img.shields.io/github/v/release/ST-DEVPT/smoketrace?color=2a78d6"></a>
+  <a href="https://github.com/ST-DEVPT/smoketrace/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/ST-DEVPT/smoketrace/actions/workflows/ci.yml/badge.svg"></a>
+  <img alt="amd64 and arm64" src="https://img.shields.io/badge/docker-amd64%20%7C%20arm64-2c6b8a">
+  <img alt="ICMP, TCP, DNS" src="https://img.shields.io/badge/probes-ICMP%20%C2%B7%20TCP%20%C2%B7%20DNS-4f4d48">
 </p>
 
 <br>
